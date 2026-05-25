@@ -4,6 +4,21 @@
    ========================================================================== */
 
 import { AppAuthState, checkExistingSession, logoutUser } from './auth.js';
+import { initChatSystem } from './chat.js';
+import { initVideoReelEngine } from './video-reel.js';
+import { initNotificationsAndAnalytics, refreshNotificationsUI } from './notifications-engine.js';
+import { initSecurityModule } from './crypto-security.js';
+import { ServerSimulator, initServerMonitoring } from './server-simulator.js';
+import { initExporter } from './data-exporter.js';
+    // Inizializzazione moduli aggiuntivi
+    initChatSystem();
+    initVideoReelEngine();
+    initNotificationsAndAnalytics();
+    initSecurityModule();
+    ServerSimulator.connect();
+    initServerMonitoring();
+    initExporter();
+    refreshNotificationsUI();
 
 // DATABASE LOCALE TEMPORANEO (Sincronizzato graficamente prima del push live su Firebase)
 const MockDatabase = {
