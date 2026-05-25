@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Alien Chat - Production Version</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="alien-icon">🛸</span>
+                <h1 class="brand-name">Alien Chat</h1>
+            </div>
+            <div class="header-actions">
+                <button id="btn-global-export" class="action-button-premium">Export Progetto</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="spa-container">
+
+        <section id="page-feed" class="spa-page active">
+            <div class="feed-wrapper">
+                <div class="post-card-template" id="sample-post-image">
+                    <div class="post-owner-info">
+                        <div class="user-avatar-placeholder">U1</div>
+                        <div class="user-meta">
+                            <span class="user-display-name">Alpha_Explorer <span class="badge-verified">🔹</span></span>
+                            <span class="post-timestamp">2 ore fa</span>
+                        </div>
+                    </div>
+                    <div class="post-body-content">
+                        <p>Benvenuti nell'era di Alien Chat. Questo è un post di test con immagine nativa.</p>
+                        <div class="post-media-box">
+                            <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800" alt="Post Multimediale" class="responsive-media">
+                        </div>
+                    </div>
+                    <div class="post-interact-bar">
+                        <button class="interaction-trigger btn-like">❤️ <span class="counter">24</span></button>
+                        <button class="interaction-trigger btn-comment">💬 <span class="counter">5</span></button>
+                        <button class="interaction-trigger btn-share">🔗 Condividi</button>
+                    </div>
+                </div>
+
+                <div class="post-card-template" id="sample-post-video">
+                    <div class="post-owner-info">
+                        <div class="user-avatar-placeholder">U2</div>
+                        <div class="user-meta">
+                            <span class="user-display-name">Cosmic_Director <span class="badge-verified">🔹</span></span>
+                            <span class="post-timestamp">5 ore fa</span>
+                        </div>
+                    </div>
+                    <div class="post-body-content">
+                        <p>Streaming video ad alta definizione riprodotto direttamente su Honor 200.</p>
+                        <div class="post-media-box">
+                            <video controls class="responsive-media" poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-background-1611-large.mp4" type="video/mp4">
+                                Il tuo browser non supporta i video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="post-interact-bar">
+                        <button class="interaction-trigger btn-like">❤️ <span class="counter">142</span></button>
+                        <button class="interaction-trigger btn-comment">💬 <span class="counter">31</span></button>
+                        <button class="interaction-trigger btn-share">🔗 Condividi</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-search" class="spa-page">
+            <div class="search-system-container">
+                <div class="search-input-group">
+                    <input type="text" id="global-search-bar" placeholder="Cerca post, influencer o club interattivi...">
+                    <button id="btn-execute-search">🔍</button>
+                </div>
+                
+                <h2 class="section-title">Club & Canali Esclusivi</h2>
+                <div class="clubs-horizontal-scroller">
+                    <button class="club-selection-tab active" data-club="alpha">🛸 Alpha Sector</button>
+                    <button class="club-selection-tab" data-club="area51">🛡️ Area 51 Private</button>
+                    <button class="club-selection-tab" data-club="nebula">✨ Nebula Room</button>
+                </div>
+
+                <div id="club-hierarchy-display" class="hierarchy-panel">
+                    <h3 id="current-club-name" class="highlight-blue">Club: Alpha Sector</h3>
+                    <p class="club-description-text">Spazio di coordinamento per lo sviluppo della rete Alpha.</p>
+                    
+                    <div class="hierarchy-list">
+                        <div class="hierarchy-item role-level-1">
+                            <span class="member-name">Tu (Fondatore Sistema)</span>
+                            <span class="role-badge badge-pres">👑 Presidente (Totale)</span>
+                        </div>
+                        <div class="hierarchy-item role-level-2">
+                            <span class="member-name">User_Beta_Partner</span>
+                            <span class="role-badge badge-vice">⚡ Vicepresidente (Previa Aut.)</span>
+                        </div>
+                        <div class="hierarchy-item role-level-3">
+                            <span class="member-name">Socio_Anziano_01</span>
+                            <span class="role-badge">Socio Anziano</span>
+                        </div>
+                        <div class="hierarchy-item role-level-4">
+                            <span class="member-name">Membro_Standard_X</span>
+                            <span class="role-badge">Socio Membro</span>
+                        </div>
+                        <div class="hierarchy-item role-level-5">
+                            <span class="member-name">Moderatore_Locale_Alpha</span>
+                            <span class="role-badge">Direttore</span>
+                        </div>
+                        <div class="hierarchy-item role-level-6">
+                            <span class="member-name">Nuovo_Infiltrato</span>
+                            <span class="role-badge">Visitatore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-notifications" class="spa-page">
+            <div class="notifications-container">
+                <h2 class="section-title">Centro Notifiche</h2>
+                <div class="notifications-list" id="sys-notifications-hook">
+                    <div class="notification-item item-money">
+                        <div class="notif-icon">🪙</div>
+                        <div class="notif-text">
+                            <p><strong>L'utente Fan_Spaziale_42</strong> ti ha inviato 50 Alien Core!</p>
+                            <span class="notif-time">10 min fa</span>
+                        </div>
+                    </div>
+                    <div class="notification-item item-sub">
+                        <div class="notif-icon">💎</div>
+                        <div class="notif-text">
+                            <p><strong>User_Delta</strong> si è abbonato al tuo canale! (Nuova Sub Attiva)</p>
+                            <span class="notif-time">1 ora fa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-profile-user" class="spa-page">
+            <div class="profile-card-header">
+                <div class="large-avatar">👤</div>
+                <div class="profile-meta-data">
+                    <h2 class="user-name-title">Utente_Standard</h2>
+                    <span class="user-role-label">Membro Community</span>
+                </div>
+            </div>
+            
+            <div class="wallet-trigger-box">
+                <button class="wallet-navigation-button" onclick="window.switchSPAPage('page-store')">
+                    💳 Apri il tuo Alien Wallet (Acquista/Ricarica)
+                </button>
+            </div>
+        </section>
+
+        <section id="page-profile-creator" class="spa-page">
+            <div class="profile-card-header">
+                <div class="large-avatar status-creator">🎙️</div>
+                <div class="profile-meta-data">
+                    <h2 class="user-name-title">Influencer_Galattico <span class="badge-verified">🔹</span></h2>
+                    <span class="user-role-label">Content Creator Verificato</span>
+                </div>
+            </div>
+            
+            <div class="creator-wallet-dashboard">
+                <h3>💰 Stipendio Accumulato (Quota 70%)</h3>
+                <div class="balance-display-box">
+                    <span class="monetary-value">1.450,00 €</span>
+                </div>
+                <div class="cashout-form-group">
+                    <input type="text" id="creator-iban-input" placeholder="Inserisci il tuo IBAN per il bonifico diretto">
+                    <button id="btn-execute-cashout" class="btn-action-success">Preleva Denaro (Cash Out)</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-profile-founder" class="spa-page">
+            <div class="profile-card-header architecture-founder">
+                <div class="large-avatar status-founder">👑</div>
+                <div class="profile-meta-data">
+                    <h2 class="user-name-title">Fondatore Supremo <span class="badge-exclusive-founder">⚡🌐</span></h2>
+                    <span class="user-role-label">PROPRIETARIO DELLO SPAZIO</span>
+                </div>
+            </div>
+
+            <div class="founder-control-panel-box">
+                <h3 class="panel-critical-title">🛡️ Controllo Sanzioni e Privilegi Fondatore</h3>
+                
+                <div class="control-row-group">
+                    <label for="target-user-sanction">Seleziona Nome Utente Target:</label>
+                    <input type="text" id="target-user-sanction" placeholder="Es. SpamBot_99">
+                </div>
+
+                <div class="control-row-group">
+                    <label for="sanction-type-select">Sanzione da Applicare a Livello Database:</label>
+                    <select id="sanction-type-select" class="styled-select-box">
+                        <option value="ban_permanent">Ban Permanente (Sfratto Totale)</option>
+                        <option value="ban_1day">Ban Temporaneo (Sospensione 24 Ore)</option>
+                        <option value="ban_chat_only">Blocca Scrittura in Chat (Muto Globale)</option>
+                        <option value="ban_comments_only">Ban Solo dai Commenti dei Post</option>
+                    </select>
+                </div>
+
+                <div class="founder-action-buttons-wrapper">
+                    <button id="btn-apply-sanction" class="btn-action-danger">APPLICA SANZIONE IN TEMPO REALE</button>
+                    <button id="btn-grant-verification" class="btn-action-info">ASSEGNA SPUNTA BLU MERITO</button>
+                </div>
+            </div>
+            
+            <div class="admin-vault-shortcut">
+                <button class="wallet-navigation-button vault-style" onclick="window.switchSPAPage('page-wallet-founder')">
+                    🏦 Accedi al Caveau Finanziario Globale (Tuo 30%)
+                </button>
+            </div>
+        </section>
+
+        <section id="page-wallet-founder" class="spa-page">
+            <div class="vault-container">
+                <h2 class="section-title highlight-gold">🏦 Caveau Amministrativo Globale</h2>
+                <p class="vault-subtitle">Rendiconto automatico delle trattenute del 30% su tutte le transazioni mondiali.</p>
+                
+                <div class="vault-stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">Volume Transazioni Totale</span>
+                        <span class="stat-number" id="vault-total-volume">156.400,00 €</span>
+                    </div>
+                    <div class="stat-box highlight-border">
+                        <span class="stat-label">Tuo Guadagno Netto (30%)</span>
+                        <span class="stat-number gold-text" id="vault-net-earnings">46.920,00 €</span>
+                    </div>
+                </div>
+
+                <div class="stripe-payout-integration-area">
+                    <h3>Invia Fondi Accumulati al tuo Conto Bancario Reale</h3>
+                    <p class="stripe-info-text">Collegato in modo sicuro tramite gateway Stripe Business API.</p>
+                    <button id="btn-stripe-payout" class="btn-action-gold">Esegui Bonifico Immediato su Conto Corrente</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-premium-info" class="spa-page">
+            <div class="premium-pitch-container">
+                <div class="premium-banner-glow">
+                    <h2 class="premium-title-neon">DIVENTA ALIEN ELITE</h2>
+                    <p class="premium-price-tag">Solo 9,99 € / mese</p>
+                </div>
+                
+                <h3 class="perks-title">Sblocca i tuoi 4 Super Poteri Estetici esclusivi:</h3>
+                <ul class="premium-perks-list">
+                    <li><strong>🪐 Il Marchio del Vettore:</strong> Uno stemma orbitale animato unico accanto al tuo nome.</li>
+                    <li><strong>🎨 Colore Nome Personalizzato:</strong> Spicca nel feed scegliendo tra Verde Neon, Viola Galattico o Oro.</li>
+                    <li><strong>🔊 Verso Spaziale Attivo:</strong> Carica un effetto sonoro unico udibile da chiunque legga i tuoi post.</li>
+                    <li><strong>👾 Emoji Galattiche:</strong> Sblocca una tastiera esclusiva di reazioni speciali animate.</li>
+                </ul>
+
+                <button id="btn-buy-premium-pass" class="btn-action-premium-checkout">ABBONATI ORA (STRIPE SECURE)</button>
+            </div>
+        </section>
+
+        <section id="page-store" class="spa-page">
+            <div class="store-layout-wrapper">
+                <h2 class="section-title">Negozio Galattico & Supporto Creator</h2>
+                <p class="store-intro">Acquista pacchetti di Sub o monete Alien Core. Prezzi ottimizzati con sconti progressivi di livello aziendale.</p>
+                
+                <div class="packages-grid-container">
+                    <div class="store-package-card">
+                        <div class="pack-header"><h3>100 Sub Pack</h3></div>
+                        <div class="pack-price">449,00 €</div>
+                        <p class="pack-benefit">Risparmi il 10% sul costo singolo. Ottimo per piogge di sub.</p>
+                        <button class="btn-purchase-trigger" data-price="449.00" data-pack="100_sub">Acquista Pass</button>
+                    </div>
+                    <div class="store-package-card premium-border">
+                        <div class="pack-header"><h3>1000 Sub Pack</h3></div>
+                        <div class="pack-price">3.999,00 €</div>
+                        <p class="pack-benefit">Risparmi il 20%. Dedicato ai super donatori e sponsor.</p>
+                        <button class="btn-purchase-trigger" data-price="3999.00" data-pack="1000_sub">Acquista Pass</button>
+                    </div>
+                    <div class="store-package-card mega-pack">
+                        <div class="pack-header"><h3>13.000 Sub Pack</h3></div>
+                        <div class="pack-price">49.999,00 €</div>
+                        <p class="pack-benefit">Il Pacchetto Balena. Attiva una notifica globale su tutta la rete.</p>
+                        <button class="btn-purchase-trigger" data-price="49999.00" data-pack="13000_sub">Acquista Pass Galattico</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="global-fab-upload-trigger" class="floating-action-button">+</button>
+
+    <div id="upload-modal-overlay" class="modal-overlay-hidden">
+        <div class="modal-box-content">
+            <h3>Nuovo Post Spaziale</h3>
+            <textarea id="upload-text-input" placeholder="A cosa stai pensando nello spazio?"></textarea>
+            <div class="file-picker-group">
+                <label for="native-file-picker" class="custom-file-upload-label">📸 Seleziona Foto o Video (.mp4)</label>
+                <input type="file" id="native-file-picker" accept="image/*,video/mp4">
+                <span id="selected-file-name-feedback">Nessun file selezionato</span>
+            </div>
+            <div class="modal-action-buttons">
+                <button id="btn-modal-cancel" class="btn-flat">Annulla</button>
+                <button id="btn-modal-publish" class="btn-action-info">Pubblica Ora</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="main-nav-footer">
+        <nav class="footer-navigation-bar">
+            <div class="nav-action-item active" data-target="page-feed">
+                <span class="nav-icon-glyph">🏠</span>
+                <span class="nav-label-text">Casa</span>
+            </div>
+            <div class="nav-action-item" data-target="page-search">
+                <span class="nav-icon-glyph">🔍</span>
+                <span class="nav-label-text">Cerca</span>
+            </div>
+            <div class="nav-action-item" data-target="page-notifications">
+                <span class="nav-icon-glyph">🔔</span>
+                <span class="nav-label-text">Notifiche</span>
+            </div>
+            <div class="nav-action-item" data-target="page-profile-founder" id="dynamic-profile-footer-tab">
+                <span class="nav-icon-glyph">👤</span>
+                <span class="nav-label-text">Profilo</span>
+            </div>
+        </nav>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
