@@ -2,6 +2,8 @@
    ALIEN CHAT - IL MOTORE CENTRALE DELL'APPLICAZIONE (APP.JS)
    Gestione SPA, Flussi Video, Calcoli Portafoglio (70/30) e Sanzioni Fondatore
    ========================================================================== */
+import { initUserSettings } from './user-settings.js';
+import { initUserSettings } from './user-settings.js';
 
 import { AppAuthState, checkExistingSession, logoutUser } from './auth.js';
 import { initChatSystem } from './chat.js';
